@@ -1,0 +1,177 @@
+/*========================= 
+   1. Global & Reset
+   ========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8fafc;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #111827;
+}
+
+/* =========================
+   2. Navbar Styling
+   ========================= */
+.navbar {
+    display: flex;
+    /* Memastikan logo di kiri dan tombol Log Out di kanan */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 12px 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Style untuk tombol Log In dan Log Out - Diterapkan ke kedua kelas */
+.log-in-button, .log-out-button {
+    background: #0f172a; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px; /* Bentuk Kapsul */
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.log-in-button:hover, .log-out-button:hover {
+    background: #1e293b;
+}
+
+/* Style alternatif jika Log Out di HTML adalah tautan <a> terakhir tanpa class khusus */
+.navbar a:last-child {
+    background: #0f172a; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px; 
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.navbar a:last-child:hover {
+    background: #1e293b;
+}
+
+/* =========================
+   3. Title
+   ========================= */
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+/* =========================
+   4. Register Form Card
+   ========================= */
+form {
+    width: 380px;
+    background: #ffffff;
+    padding: 24px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Form Elements */
+form label {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 6px; 
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+/* Tombol SIMPAN pada form input.php Anda */
+/* Saya mengasumsikan tombol SIMPAN ini adalah elemen <button> atau <input type="submit"> */
+button[name="register"], 
+input[type="submit"] { /* Ditambahkan input[type="submit"] jika SIMPAN adalah submit */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #0f172a;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    /* Penambahan khusus untuk tombol SIMPAN yang terlihat di screenshot */
+    margin-top: 8px; 
+}
+
+button[name="register"]:hover, 
+input[type="submit"]:hover {
+    background: #1e293b;
+}
+
+/* =========================
+   5. Link ke login
+   ========================= */
+p {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+p a {
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   6. Responsive
+   ========================= */
+/* Untuk layar tablet dan mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+}
+
+/* Untuk layar mobile kecil */
+@media (max-width: 480px) {
+    form {
+        width: 92%;
+        margin-top: 20px;
+    }
+    
+    .navbar {
+        padding: 10px 15px;
+    }
+}

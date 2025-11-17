@@ -1,0 +1,267 @@
+/* ==================================================
+   landing_page.css — organized and minimal
+   Sections: reset | variables | base | layout | header | hero | content/cards | footer | utilities | media queries
+   ================================================== */
+
+/* =========================
+   Reset & Box Model
+   ========================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* =========================
+   Theme Variables
+   ========================= */
+:root {
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --text: #111827;
+  --accent: #0f1724;
+  --surface: #f8fafc;
+  --container-max: 1100px;
+  --gap-sm: 12px;
+  --gap-md: 24px;
+  --radius: 10px;
+}
+
+/* =========================
+   Base
+   ========================= */
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--container-max);
+  width: 92%;
+  margin: 0 auto;
+}
+
+/* =========================
+   Header / Navigation
+   ========================= */
+.site-header {
+  padding: 18px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-md);
+}
+
+.logo img {
+  height: 72px;
+  width: auto;
+  display: block;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.nav-link:focus {
+  outline: 3px solid rgba(17, 24, 39, 0.06);
+  outline-offset: 2px;
+}
+
+.nav-link.active {
+  color: var(--text);
+  background: rgba(15, 23, 36, 0.04);
+}
+
+.nav-sep {
+  color: #e6edf3;
+}
+
+.btn.login {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  padding: 40px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 46px;
+  margin: 0 0 12px;
+  line-height: 1.03;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 16px;
+}
+
+.hero-media .image-placeholder img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.divider {
+  border-top: 2px dashed #dbe7ef;
+  margin: 28px 0;
+}
+
+/* =========================
+   Content / Cards
+   ========================= */
+.content {
+  padding: 26px 0 56px;
+}
+
+.content h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 auto 24px;
+  max-width: 760px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 260px;
+  max-width: 320px;
+  text-align: center;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: 0 6px 20px rgba(12, 16, 20, 0.04);
+}
+
+.card-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  padding: 18px 0;
+  border-top: 1px solid #eef6fb;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =========================
+   Utilities
+   ========================= */
+.container.header-inner {
+  align-items: center;
+}
+
+/* =========================
+   Media Queries
+   ========================= */
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-media .image-placeholder img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .logo img {
+    height: 56px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-link {
+    display: none;
+  }
+
+  .logo img {
+    height: 44px;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-media .image-placeholder img {
+    height: 200px;
+  }
+
+  .cards {
+    gap: 12px;
+  }
+}
+
+
